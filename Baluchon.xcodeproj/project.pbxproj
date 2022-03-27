@@ -56,15 +56,47 @@
 		EBA5ECF027F063E700292CD0 /* Baluchon */ = {
 			isa = PBXGroup;
 			children = (
-				EBA5ECF127F063E700292CD0 /* AppDelegate.swift */,
-				EBA5ECF327F063E700292CD0 /* SceneDelegate.swift */,
-				EBA5ECF527F063E700292CD0 /* ViewController.swift */,
-				EBA5ECF727F063E700292CD0 /* Main.storyboard */,
-				EBA5ECFA27F063E900292CD0 /* Assets.xcassets */,
-				EBA5ECFC27F063E900292CD0 /* LaunchScreen.storyboard */,
-				EBA5ECFF27F063E900292CD0 /* Info.plist */,
+				EBA5ED0827F0641400292CD0 /* Controller */,
+				EBA5ED0727F0640F00292CD0 /* View */,
+				EBA5ED0627F0640800292CD0 /* Model */,
+				EBA5ED0527F0640100292CD0 /* SupportingFiles */,
 			);
 			path = Baluchon;
+			sourceTree = "<group>";
+		};
+		EBA5ED0527F0640100292CD0 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				EBA5ECF127F063E700292CD0 /* AppDelegate.swift */,
+				EBA5ECF327F063E700292CD0 /* SceneDelegate.swift */,
+				EBA5ECFA27F063E900292CD0 /* Assets.xcassets */,
+				EBA5ECFF27F063E900292CD0 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		EBA5ED0627F0640800292CD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EBA5ED0727F0640F00292CD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBA5ECF727F063E700292CD0 /* Main.storyboard */,
+				EBA5ECFC27F063E900292CD0 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EBA5ED0827F0641400292CD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBA5ECF527F063E700292CD0 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +321,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CES656DH72;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Baluchon/Info.plist;
+				INFOPLIST_FILE = Baluchon/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CES656DH72;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Baluchon/Info.plist;
+				INFOPLIST_FILE = Baluchon/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
