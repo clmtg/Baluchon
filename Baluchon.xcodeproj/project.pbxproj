@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB1BEEE527F1A0010060D7A1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BEEE427F1A0010060D7A1 /* Error.swift */; };
-		EB1BEEE727F1A01E0060D7A1 /* ExtensionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BEEE627F1A01E0060D7A1 /* ExtensionAlert.swift */; };
+		EB1BEEE727F1A01E0060D7A1 /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BEEE627F1A01E0060D7A1 /* ExtensionView.swift */; };
 		EB1BEEE927F1A6F70060D7A1 /* CurrencyServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BEEE827F1A6F70060D7A1 /* CurrencyServiceError.swift */; };
 		EB1D3F8127F06B670080E649 /* CurrencyStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D3F8027F06B670080E649 /* CurrencyStruct.swift */; };
 		EBA5ECF227F063E700292CD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA5ECF127F063E700292CD0 /* AppDelegate.swift */; };
@@ -21,8 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EB1BEEE427F1A0010060D7A1 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		EB1BEEE627F1A01E0060D7A1 /* ExtensionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAlert.swift; sourceTree = "<group>"; };
+		EB1BEEE627F1A01E0060D7A1 /* ExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
 		EB1BEEE827F1A6F70060D7A1 /* CurrencyServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyServiceError.swift; sourceTree = "<group>"; };
 		EB1D3F8027F06B670080E649 /* CurrencyStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyStruct.swift; sourceTree = "<group>"; };
 		EBA5ECEE27F063E700292CD0 /* Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,8 +48,7 @@
 		EB1BEEE327F19FF20060D7A1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EB1BEEE427F1A0010060D7A1 /* Error.swift */,
-				EB1BEEE627F1A01E0060D7A1 /* ExtensionAlert.swift */,
+				EB1BEEE627F1A01E0060D7A1 /* ExtensionView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -210,12 +207,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBC2EFA227F064D200A14D92 /* CurrencyService.swift in Sources */,
-				EB1BEEE727F1A01E0060D7A1 /* ExtensionAlert.swift in Sources */,
+				EB1BEEE727F1A01E0060D7A1 /* ExtensionView.swift in Sources */,
 				EBC2EFA527F0650E00A14D92 /* CurrencyViewController.swift in Sources */,
 				EB1BEEE927F1A6F70060D7A1 /* CurrencyServiceError.swift in Sources */,
 				EBA5ECF227F063E700292CD0 /* AppDelegate.swift in Sources */,
 				EB1D3F8127F06B670080E649 /* CurrencyStruct.swift in Sources */,
-				EB1BEEE527F1A0010060D7A1 /* Error.swift in Sources */,
 				EBA5ECF427F063E700292CD0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

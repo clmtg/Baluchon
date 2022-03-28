@@ -65,6 +65,9 @@
                                     <action selector="tappedConvertButton:" destination="jyY-7o-dcc" eventType="touchUpInside" id="LkL-9M-tHF"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Mlh-cm-CMc">
+                                <rect key="frame" x="197" y="360" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hTw-3D-Bbr"/>
                         <color key="backgroundColor" red="0.84900957349999995" green="0.94310396910000005" blue="0.99784690139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,7 +81,9 @@
                             <constraint firstItem="o5L-tb-xC9" firstAttribute="leading" secondItem="hTw-3D-Bbr" secondAttribute="leading" constant="20" id="QYv-5c-ozz"/>
                             <constraint firstItem="7wl-tg-Bjc" firstAttribute="leading" secondItem="hTw-3D-Bbr" secondAttribute="leading" constant="20" id="Wue-fE-F69"/>
                             <constraint firstItem="hTw-3D-Bbr" firstAttribute="trailing" secondItem="k5y-J5-LMC" secondAttribute="trailing" constant="20" id="YfV-we-gaB"/>
+                            <constraint firstItem="Mlh-cm-CMc" firstAttribute="top" secondItem="t7t-jn-ZnF" secondAttribute="bottom" constant="20" id="bQZ-W7-4ar"/>
                             <constraint firstItem="o5L-tb-xC9" firstAttribute="top" secondItem="7wl-tg-Bjc" secondAttribute="bottom" constant="50" id="c9g-0H-7aO"/>
+                            <constraint firstItem="Mlh-cm-CMc" firstAttribute="centerX" secondItem="SLA-cZ-4Gw" secondAttribute="centerX" id="cB5-jK-aiY"/>
                             <constraint firstItem="t7t-jn-ZnF" firstAttribute="top" secondItem="k5y-J5-LMC" secondAttribute="bottom" constant="50" id="gD5-Jb-0GG"/>
                             <constraint firstItem="7wl-tg-Bjc" firstAttribute="centerX" secondItem="SLA-cZ-4Gw" secondAttribute="centerX" id="plh-6b-5vX"/>
                             <constraint firstItem="k5y-J5-LMC" firstAttribute="leading" secondItem="hTw-3D-Bbr" secondAttribute="leading" constant="20" id="v43-fo-Dkr"/>
@@ -89,6 +94,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="sIw-5W-TPy"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Mlh-cm-CMc" id="Get-fZ-Z74"/>
+                        <outlet property="buttonConvert" destination="t7t-jn-ZnF" id="9xw-QR-Ik1"/>
                         <outlet property="labelResult" destination="k5y-J5-LMC" id="OYK-Dw-hvX"/>
                         <outlet property="textFieldLocalAmount" destination="7wl-tg-Bjc" id="YXd-2n-I0y"/>
                     </connections>
@@ -100,7 +107,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="555" y="171"/>
+            <point key="canvasLocation" x="553.62318840579712" y="170.75892857142856"/>
         </scene>
     </scenes>
 </document>

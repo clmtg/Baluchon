@@ -39,23 +39,29 @@ class CurrencyService {
                     return
                 }
                 
+                
+                /* 2 implementations available here
+                 
+                 -----> 1. By using guard
+                 
                 guard let responseJSON = try? JSONDecoder().decode(CurrencyStruct.self, from: data) else {
                     callback(CurrencyServiceError.jsonInvalid, nil)
                     return
                 }
+                 
+                 -----> 2. By using do cach
                 
-                callback(nil, responseJSON)
+                 */
+                
+                do {
+                    let responseJSON = try JSONDecoder().decode(CurrencyStruct.self, from: data)
+                    callback(nil, responseJSON)
+                } catch  {
+                    callback(CurrencyServiceError.jsonInvalid, nil)
+                }
+                
             }
         }
         task.resume()
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
