@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CurrencyServiceError: Error {
+enum ServiceError: Error {
     case corruptData
     case unexpectedResponse
     case jsonInvalid

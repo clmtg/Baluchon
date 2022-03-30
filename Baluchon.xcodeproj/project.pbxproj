@@ -7,21 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB1988E827F2DF5800F397C7 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1988E727F2DF5800F397C7 /* WeatherViewController.swift */; };
+		EB1988EA27F2E2FC00F397C7 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1988E927F2E2FC00F397C7 /* WeatherService.swift */; };
+		EB1988EC27F2E4F800F397C7 /* WeatherStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1988EB27F2E4F800F397C7 /* WeatherStruct.swift */; };
 		EB1BEEE727F1A01E0060D7A1 /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BEEE627F1A01E0060D7A1 /* ExtensionView.swift */; };
-		EB1BEEE927F1A6F70060D7A1 /* CurrencyServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BEEE827F1A6F70060D7A1 /* CurrencyServiceError.swift */; };
+		EB1BEEE927F1A6F70060D7A1 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BEEE827F1A6F70060D7A1 /* ServiceError.swift */; };
 		EB1D3F8127F06B670080E649 /* CurrencyStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D3F8027F06B670080E649 /* CurrencyStruct.swift */; };
 		EBA5ECF227F063E700292CD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA5ECF127F063E700292CD0 /* AppDelegate.swift */; };
 		EBA5ECF427F063E700292CD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA5ECF327F063E700292CD0 /* SceneDelegate.swift */; };
 		EBA5ECF927F063E700292CD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA5ECF727F063E700292CD0 /* Main.storyboard */; };
 		EBA5ECFB27F063E900292CD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA5ECFA27F063E900292CD0 /* Assets.xcassets */; };
 		EBA5ECFE27F063E900292CD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA5ECFC27F063E900292CD0 /* LaunchScreen.storyboard */; };
+		EBB849A727F3323D00EEDBE0 /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB849A627F3323D00EEDBE0 /* CoreLocationManager.swift */; };
 		EBC2EFA227F064D200A14D92 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2EFA127F064D200A14D92 /* CurrencyService.swift */; };
 		EBC2EFA527F0650E00A14D92 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2EFA427F0650D00A14D92 /* CurrencyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB1988E727F2DF5800F397C7 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		EB1988E927F2E2FC00F397C7 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		EB1988EB27F2E4F800F397C7 /* WeatherStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStruct.swift; sourceTree = "<group>"; };
 		EB1BEEE627F1A01E0060D7A1 /* ExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
-		EB1BEEE827F1A6F70060D7A1 /* CurrencyServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyServiceError.swift; sourceTree = "<group>"; };
+		EB1BEEE827F1A6F70060D7A1 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		EB1D3F8027F06B670080E649 /* CurrencyStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyStruct.swift; sourceTree = "<group>"; };
 		EBA5ECEE27F063E700292CD0 /* Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA5ECF127F063E700292CD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +37,7 @@
 		EBA5ECFA27F063E900292CD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBA5ECFD27F063E900292CD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBA5ECFF27F063E900292CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBB849A627F3323D00EEDBE0 /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 		EBC2EFA127F064D200A14D92 /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
 		EBC2EFA427F0650D00A14D92 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,6 +53,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB1988E127F2DEDB00F397C7 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				EB1988E727F2DF5800F397C7 /* WeatherViewController.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		EB1988E227F2DEE400F397C7 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				EB1988E927F2E2FC00F397C7 /* WeatherService.swift */,
+				EB1988EB27F2E4F800F397C7 /* WeatherStruct.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		EB1BEEE327F19FF20060D7A1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +120,9 @@
 		EBA5ED0627F0640800292CD0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EBB849A627F3323D00EEDBE0 /* CoreLocationManager.swift */,
+				EB1BEEE827F1A6F70060D7A1 /* ServiceError.swift */,
+				EB1988E227F2DEE400F397C7 /* Weather */,
 				EBC2EFA027F064B000A14D92 /* Currency */,
 			);
 			path = Model;
@@ -112,6 +140,7 @@
 		EBA5ED0827F0641400292CD0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EB1988E127F2DEDB00F397C7 /* Weather */,
 				EBC2EFA327F064F500A14D92 /* Currency */,
 			);
 			path = Controller;
@@ -121,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				EB1D3F8027F06B670080E649 /* CurrencyStruct.swift */,
-				EB1BEEE827F1A6F70060D7A1 /* CurrencyServiceError.swift */,
 				EBC2EFA127F064D200A14D92 /* CurrencyService.swift */,
 			);
 			path = Currency;
@@ -207,10 +235,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBC2EFA227F064D200A14D92 /* CurrencyService.swift in Sources */,
+				EB1988EA27F2E2FC00F397C7 /* WeatherService.swift in Sources */,
 				EB1BEEE727F1A01E0060D7A1 /* ExtensionView.swift in Sources */,
+				EB1988EC27F2E4F800F397C7 /* WeatherStruct.swift in Sources */,
 				EBC2EFA527F0650E00A14D92 /* CurrencyViewController.swift in Sources */,
-				EB1BEEE927F1A6F70060D7A1 /* CurrencyServiceError.swift in Sources */,
+				EBB849A727F3323D00EEDBE0 /* CoreLocationManager.swift in Sources */,
+				EB1BEEE927F1A6F70060D7A1 /* ServiceError.swift in Sources */,
 				EBA5ECF227F063E700292CD0 /* AppDelegate.swift in Sources */,
+				EB1988E827F2DF5800F397C7 /* WeatherViewController.swift in Sources */,
 				EB1D3F8127F06B670080E649 /* CurrencyStruct.swift in Sources */,
 				EBA5ECF427F063E700292CD0 /* SceneDelegate.swift in Sources */,
 			);

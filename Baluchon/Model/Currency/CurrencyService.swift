@@ -30,12 +30,12 @@ class CurrencyService {
             
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
-                    callback(CurrencyServiceError.corruptData, nil)
+                    callback(ServiceError.corruptData, nil)
                     return
                 }
                 
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    callback(CurrencyServiceError.unexpectedResponse, nil)
+                    callback(ServiceError.unexpectedResponse, nil)
                     return
                 }
                 
@@ -44,20 +44,20 @@ class CurrencyService {
                  
                  -----> 1. By using guard
                  
-                guard let responseJSON = try? JSONDecoder().decode(CurrencyStruct.self, from: data) else {
-                    callback(CurrencyServiceError.jsonInvalid, nil)
-                    return
-                }
+                 guard let responseJSON = try? JSONDecoder().decode(CurrencyStruct.self, from: data) else {
+                 callback(ServiceError.jsonInvalid, nil)
+                 return
+                 }
                  
                  -----> 2. By using do cach
-                
+                 
                  */
                 
                 do {
                     let responseJSON = try JSONDecoder().decode(CurrencyStruct.self, from: data)
                     callback(nil, responseJSON)
                 } catch  {
-                    callback(CurrencyServiceError.jsonInvalid, nil)
+                    callback(ServiceError.jsonInvalid, nil)
                 }
                 
             }

@@ -47,7 +47,6 @@ class CurrencyViewController: UIViewController {
     
     
     // MARK: - Functions
-    
     /// Convert the amount provided by the user and display it within the view
     func convertAmount(){
         currency.retreiveRates { success, rates in
@@ -58,13 +57,13 @@ class CurrencyViewController: UIViewController {
                 var errorMessage: String?
                 
                 switch success {
-                case CurrencyServiceError.corruptData:
+                case ServiceError.corruptData:
                     errorMessage = "Fixer's data appear to be corrupted."
                     
-                case CurrencyServiceError.unexpectedResponse:
+                case ServiceError.unexpectedResponse:
                     errorMessage = "Fixer's server provided an unexpected response."
                     
-                case CurrencyServiceError.jsonInvalid:
+                case ServiceError.jsonInvalid:
                     errorMessage = "Fixer's response doesn't respect JSON pattern."
                     
                 default:
@@ -110,8 +109,6 @@ class CurrencyViewController: UIViewController {
 
 
 // MARK: - Extension
-
-
 extension CurrencyViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

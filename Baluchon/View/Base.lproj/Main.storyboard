@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,13 +19,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="jyY-7o-dcc" kind="relationship" relationship="viewControllers" id="5TZ-Tx-WwL"/>
+                        <segue destination="Pea-Ie-LqA" kind="relationship" relationship="viewControllers" id="Q2f-S5-D2P"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WB5-AX-RQ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-436" y="171"/>
         </scene>
-        <!--Item-->
+        <!--Currency-->
         <scene sceneID="DIU-hR-OQe">
             <objects>
                 <viewController id="jyY-7o-dcc" customClass="CurrencyViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,7 +94,7 @@
                             <outletCollection property="gestureRecognizers" destination="PDa-de-emf" appends="YES" id="iL6-f8-zZu"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="sIw-5W-TPy"/>
+                    <tabBarItem key="tabBarItem" title="Currency" id="sIw-5W-TPy" userLabel="Currency"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Mlh-cm-CMc" id="Get-fZ-Z74"/>
                         <outlet property="buttonConvert" destination="t7t-jn-ZnF" id="9xw-QR-Ik1"/>
@@ -109,5 +111,84 @@
             </objects>
             <point key="canvasLocation" x="553.62318840579712" y="170.75892857142856"/>
         </scene>
+        <!--Weather-->
+        <scene sceneID="JMS-cs-axE">
+            <objects>
+                <viewController id="Pea-Ie-LqA" customClass="WeatherViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Va-H3-3EX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WUd-xF-4IP" userLabel="stackViewLoading">
+                                <rect key="frame" x="20" y="409.5" width="374" height="77.5"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="5qu-kk-qrw">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="37"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hang on, we are checking the sky for you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeV-ky-mCS">
+                                        <rect key="frame" x="0.0" y="57" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6WB-5N-6xp" userLabel="stackViewCity">
+                                <rect key="frame" x="20" y="64" width="374" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cityName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flc-R8-J59">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8w8-gT-rYF">
+                                <rect key="frame" x="363" y="94.5" width="31" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
+                                    <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="large"/>
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedRefrehButton:" destination="Pea-Ie-LqA" eventType="touchUpInside" id="9KY-UX-eK8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oe2-O1-86p"/>
+                        <color key="backgroundColor" red="0.84900957349999995" green="0.94310396910000005" blue="0.99784690139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6WB-5N-6xp" firstAttribute="top" secondItem="Oe2-O1-86p" secondAttribute="top" constant="20" id="1GK-dv-Qq8"/>
+                            <constraint firstItem="WUd-xF-4IP" firstAttribute="centerX" secondItem="0Va-H3-3EX" secondAttribute="centerX" id="3WU-ex-Zfd"/>
+                            <constraint firstItem="WUd-xF-4IP" firstAttribute="centerY" secondItem="0Va-H3-3EX" secondAttribute="centerY" id="3d5-DV-Nfv"/>
+                            <constraint firstItem="WUd-xF-4IP" firstAttribute="leading" secondItem="Oe2-O1-86p" secondAttribute="leading" constant="20" id="CBH-3q-ASI"/>
+                            <constraint firstItem="Oe2-O1-86p" firstAttribute="trailing" secondItem="WUd-xF-4IP" secondAttribute="trailing" constant="20" id="DKn-Pv-1yP"/>
+                            <constraint firstItem="Oe2-O1-86p" firstAttribute="trailing" secondItem="8w8-gT-rYF" secondAttribute="trailing" constant="20" id="PHO-Jl-j5E"/>
+                            <constraint firstItem="8w8-gT-rYF" firstAttribute="top" secondItem="6WB-5N-6xp" secondAttribute="bottom" constant="10" id="URG-eq-rcP"/>
+                            <constraint firstItem="6WB-5N-6xp" firstAttribute="leading" secondItem="Oe2-O1-86p" secondAttribute="leading" constant="20" id="ZcS-lU-m7m"/>
+                            <constraint firstItem="Oe2-O1-86p" firstAttribute="trailing" secondItem="6WB-5N-6xp" secondAttribute="trailing" constant="20" id="iVB-B4-frZ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Weather" id="zZr-le-VL9" userLabel="Weather"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="flc-R8-J59" id="CWH-jN-fKf"/>
+                        <outlet property="stackViewCity" destination="6WB-5N-6xp" id="ZGL-Gt-H1h"/>
+                        <outlet property="stackViewLoading" destination="WUd-xF-4IP" id="1S6-IK-OAO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s4p-8t-1Cs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553.62318840579712" y="914.73214285714278"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
