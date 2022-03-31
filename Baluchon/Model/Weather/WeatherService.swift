@@ -11,6 +11,17 @@ import Foundation
 class WeatherService {
         
     // MARK: - Vars
+    //OpenWeather URL to reach the API
+    private static let urlOpenWeather = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=40.7127281&lon=-74.0060152&appid=a4b4a7ca2573a4498b50ac984573b1f9")!
+    
+    //Session and data task used to perform REST calls
+    let session: URLSession
+    var task: URLSessionDataTask?
+    
+    //Class initializer
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
     
     // MARK: - Functions
     
@@ -19,32 +30,24 @@ class WeatherService {
     ///   - lon: longitude of the location weather data request
     ///   - lat: latitude of the location weather data request
     ///   - callback: how to process data once gathered
-    func retreiveWeatherFor(lon: Double, lat: Double, callback: @escaping (Error?, weatherStruct?) -> Void) {
-        
-        let urlOpenWeather = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=a4b4a7ca2573a4498b50ac984573b1f9")!
-        
-        let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: urlOpenWeather) { data, response, error in
+    func retreiveWeatherFor(callback: @escaping (Result<weatherStruct, ServiceError>) -> Void) {
+        task = session.dataTask(with: WeatherService.urlOpenWeather) { data, response, error in
+            guard let data = data, error == nil else {
+                callback(.failure(.corruptData))
+                return
+            }
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                callback(.failure(.corruptData))
+                return
+            }
             
-            DispatchQueue.main.async {
-                guard let data = data, error == nil else {
-                    callback(ServiceError.corruptData, nil)
-                    return
-                }
-                
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    callback(ServiceError.unexpectedResponse, nil)
-                    return
-                }
-                
-                do {
-                    let responseJSON = try JSONDecoder().decode(weatherStruct.self, from: data)
-                    callback(nil, responseJSON)
-                } catch  {
-                    callback(ServiceError.jsonInvalid, nil)
-                }
+            do {
+                let responseJSON = try JSONDecoder().decode(weatherStruct.self, from: data)
+                callback(.success(responseJSON))
+            } catch  {
+                callback(.failure(.corruptData))
             }
         }
-        task.resume()
+        task?.resume()
     }
 }
