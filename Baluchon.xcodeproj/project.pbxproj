@@ -13,6 +13,7 @@
 		EB1BEEE727F1A01E0060D7A1 /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BEEE627F1A01E0060D7A1 /* ExtensionView.swift */; };
 		EB1BEEE927F1A6F70060D7A1 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BEEE827F1A6F70060D7A1 /* ServiceError.swift */; };
 		EB1D3F8127F06B670080E649 /* CurrencyStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D3F8027F06B670080E649 /* CurrencyStruct.swift */; };
+		EB935F6B27F5A6A400C7A38A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EB935F6A27F5A6A400C7A38A /* README.md */; };
 		EBA5ECF227F063E700292CD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA5ECF127F063E700292CD0 /* AppDelegate.swift */; };
 		EBA5ECF427F063E700292CD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA5ECF327F063E700292CD0 /* SceneDelegate.swift */; };
 		EBA5ECF927F063E700292CD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA5ECF727F063E700292CD0 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		EB1BEEE627F1A01E0060D7A1 /* ExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
 		EB1BEEE827F1A6F70060D7A1 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		EB1D3F8027F06B670080E649 /* CurrencyStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyStruct.swift; sourceTree = "<group>"; };
+		EB935F6A27F5A6A400C7A38A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EBA5ECEE27F063E700292CD0 /* Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA5ECF127F063E700292CD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBA5ECF327F063E700292CD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		EBA5ECE527F063E700292CD0 = {
 			isa = PBXGroup;
 			children = (
+				EB935F6A27F5A6A400C7A38A /* README.md */,
 				EBA5ECF027F063E700292CD0 /* Baluchon */,
 				EBA5ECEF27F063E700292CD0 /* Products */,
 			);
@@ -223,6 +226,7 @@
 			files = (
 				EBA5ECFE27F063E900292CD0 /* LaunchScreen.storyboard in Resources */,
 				EBA5ECFB27F063E900292CD0 /* Assets.xcassets in Resources */,
+				EB935F6B27F5A6A400C7A38A /* README.md in Resources */,
 				EBA5ECF927F063E700292CD0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
