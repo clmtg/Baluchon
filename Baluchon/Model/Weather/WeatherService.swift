@@ -9,12 +9,7 @@ import Foundation
 
 /// Class which handle the weather data needs for the Baluchon's app
 class WeatherService {
-    
-    // MARK: - Singleton pattern
-    static let shared = WeatherService()
-    init() {
-    }
-    
+        
     // MARK: - Vars
     
     // MARK: - Functions

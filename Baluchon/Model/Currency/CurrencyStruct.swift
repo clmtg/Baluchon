@@ -7,12 +7,9 @@
 
 import Foundation
 
-struct CurrencyStruct: Codable{
-    let success: Bool
-    let timestamp: Double
-    let base: String
-    let date: String
-    let rates: [String: Double]
+struct CurrencyStruct: Decodable{
+    let base: String //Which base currency is used. In this case it should be EUR
+    let rates: [String: Double] //Country code and related exchanges rates
 }
 
 
