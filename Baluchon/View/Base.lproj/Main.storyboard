@@ -146,7 +146,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your text here. It must be in French !" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xlv-wU-BKX">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your text here. " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xlv-wU-BKX">
                                         <rect key="frame" x="0.0" y="30.5" width="374" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="yFR-Th-sPc"/>
@@ -199,6 +199,9 @@
                             <constraint firstItem="pwA-p9-Tqf" firstAttribute="top" secondItem="HEo-V9-xrq" secondAttribute="top" constant="20" id="pI3-Jq-ZvK"/>
                             <constraint firstItem="pwA-p9-Tqf" firstAttribute="leading" secondItem="HEo-V9-xrq" secondAttribute="leading" constant="20" id="rNM-dW-ueW"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="uL3-Hi-NeQ" appends="YES" id="84t-lK-nzp"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Translate" id="dtV-3h-Bhl"/>
                     <connections>
@@ -208,6 +211,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gwo-Pw-ZVZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uL3-Hi-NeQ">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="C9X-y5-B9q" id="gFj-Gm-LXa"/>
+                        <outlet property="delegate" destination="pfu-KQ-Ws3" id="dYN-qL-4EC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="554" y="-553"/>
         </scene>

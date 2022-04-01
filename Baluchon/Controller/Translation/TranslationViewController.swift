@@ -35,6 +35,11 @@ class TranslationViewController: UIViewController {
     @IBAction func tappedButtonTranslate(_ sender: Any) {
         processTranslation()
     }
+    // User to hide keyboard when the user touch the
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        dismissKeyboard()
+    }
+    
     
     // MARK: - Functions
     private func processTranslation(){
@@ -58,6 +63,11 @@ class TranslationViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    /// Make the UITextField   no longer the first responder
+    func dismissKeyboard() {
+        textFieldLocalText.resignFirstResponder()
     }
 }
 
