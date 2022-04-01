@@ -11,8 +11,6 @@ class TranslationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     //DataDource for picker
@@ -40,7 +38,6 @@ class TranslationViewController: UIViewController {
     
     // MARK: - Functions
     private func processTranslation(){
-        
         translationCore.translateText(text: textFieldLocalText.text, from: "FR", to: selectedTargetLanguageKey) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -64,12 +61,7 @@ class TranslationViewController: UIViewController {
     }
 }
 
-
-
-
-
 // MARK: - Extensions
-
 extension TranslationViewController: UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
