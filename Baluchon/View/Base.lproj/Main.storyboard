@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,6 +21,7 @@
                     <connections>
                         <segue destination="jyY-7o-dcc" kind="relationship" relationship="viewControllers" id="5TZ-Tx-WwL"/>
                         <segue destination="Pea-Ie-LqA" kind="relationship" relationship="viewControllers" id="Q2f-S5-D2P"/>
+                        <segue destination="C9X-y5-B9q" kind="relationship" relationship="viewControllers" id="jpo-B4-qwV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WB5-AX-RQ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -111,6 +113,104 @@
             </objects>
             <point key="canvasLocation" x="553.62318840579712" y="170.75892857142856"/>
         </scene>
+        <!--Translate-->
+        <scene sceneID="G7v-gf-RqV">
+            <objects>
+                <viewController id="C9X-y5-B9q" customClass="TranslationViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pfu-KQ-Ws3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvE-xl-VKy">
+                                <rect key="frame" x="20" y="575.5" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="e7q-J2-u5l"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Translate">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.67436683180000001" green="0.30825665590000001" blue="0.54357498879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" red="0.84900957349999995" green="0.94310396910000005" blue="0.99784690139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedButtonTranslate:" destination="C9X-y5-B9q" eventType="touchUpInside" id="et3-Pn-Buf"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pwA-p9-Tqf">
+                                <rect key="frame" x="20" y="64" width="374" height="461.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text to translate :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XS-wd-bQI">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your text here. It must be in French !" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xlv-wU-BKX">
+                                        <rect key="frame" x="0.0" y="30.5" width="374" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="yFR-Th-sPc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translate to :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZD-Hk-W2l">
+                                        <rect key="frame" x="0.0" y="190.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofx-Th-AEb">
+                                        <rect key="frame" x="0.0" y="221" width="374" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="cjv-Jc-gEv"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="C9X-y5-B9q" id="D27-uH-AVo"/>
+                                            <outlet property="delegate" destination="C9X-y5-B9q" id="ELF-Uq-lsU"/>
+                                        </connections>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translation result :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8k-AY-wWE">
+                                        <rect key="frame" x="0.0" y="381" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result text here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yft-lt-FnH">
+                                        <rect key="frame" x="0.0" y="411.5" width="374" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="PUD-jN-r8Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HEo-V9-xrq"/>
+                        <color key="backgroundColor" red="0.84522587059999998" green="0.94660431150000002" blue="0.99766236539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HEo-V9-xrq" firstAttribute="trailing" secondItem="jvE-xl-VKy" secondAttribute="trailing" constant="20" id="8Xh-vd-sTO"/>
+                            <constraint firstItem="HEo-V9-xrq" firstAttribute="trailing" secondItem="pwA-p9-Tqf" secondAttribute="trailing" constant="20" id="EcN-nk-3QZ"/>
+                            <constraint firstItem="jvE-xl-VKy" firstAttribute="top" secondItem="pwA-p9-Tqf" secondAttribute="bottom" constant="50" id="Sen-8v-Y2X"/>
+                            <constraint firstItem="jvE-xl-VKy" firstAttribute="leading" secondItem="HEo-V9-xrq" secondAttribute="leading" constant="20" id="nIk-4B-Yka"/>
+                            <constraint firstItem="pwA-p9-Tqf" firstAttribute="top" secondItem="HEo-V9-xrq" secondAttribute="top" constant="20" id="pI3-Jq-ZvK"/>
+                            <constraint firstItem="pwA-p9-Tqf" firstAttribute="leading" secondItem="HEo-V9-xrq" secondAttribute="leading" constant="20" id="rNM-dW-ueW"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Translate" id="dtV-3h-Bhl"/>
+                    <connections>
+                        <outlet property="labelForeignText" destination="Yft-lt-FnH" id="axi-ew-oVu"/>
+                        <outlet property="pickerTargetLanguage" destination="ofx-Th-AEb" id="iSf-cO-hjU"/>
+                        <outlet property="textFieldLocalText" destination="Xlv-wU-BKX" id="qIa-F6-flv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gwo-Pw-ZVZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="554" y="-553"/>
+        </scene>
         <!--Weather-->
         <scene sceneID="JMS-cs-axE">
             <objects>
@@ -187,6 +287,9 @@
     </scenes>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -34,5 +34,4 @@ extension UIViewController {
     func toggleActivityIndicator(indicator: UIActivityIndicatorView) {
         indicator.isHidden = !indicator.isHidden
     }
-    
 }

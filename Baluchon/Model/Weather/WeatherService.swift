@@ -31,13 +31,14 @@ class WeatherService {
     ///   - lat: latitude of the location weather data request
     ///   - callback: how to process data once gathered
     func retreiveWeatherFor(callback: @escaping (Result<weatherStruct, ServiceError>) -> Void) {
+        task?.cancel()
         task = session.dataTask(with: WeatherService.urlOpenWeather) { data, response, error in
             guard let data = data, error == nil else {
                 callback(.failure(.corruptData))
                 return
             }
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                callback(.failure(.corruptData))
+                callback(.failure(.unexpectedResponse))
                 return
             }
             
@@ -45,7 +46,7 @@ class WeatherService {
                 let responseJSON = try JSONDecoder().decode(weatherStruct.self, from: data)
                 callback(.success(responseJSON))
             } catch  {
-                callback(.failure(.corruptData))
+                callback(.failure(.jsonInvalid))
             }
         }
         task?.resume()

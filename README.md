@@ -8,3 +8,5 @@ Lucky for you, Baluchon is here for you, ready to answer to all of those questio
 Baluchon is nothing more than you personal assistante right in your pocket. With Baluchon you can get the current weather, convert amounts from your local currency to the foreign one using the latest rates, of course. You can even translate sentences. All of that to make sure you will enjoy your journey as much as possible. 
 
 Enjoy Baluchon and safe travel to you.
+
+## Additional information

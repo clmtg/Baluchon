@@ -27,7 +27,7 @@ class CurrencyService {
     /// Description
     /// - Parameter callback: callback description
     func retreiveRates(callback: @escaping (Result<CurrencyStruct, ServiceError>) -> Void) {
-        
+        task?.cancel()
         task = session.dataTask(with: CurrencyService.urlFixer) { data, response, error in
             guard let data = data, error == nil else {
                 callback(.failure(.corruptData))
