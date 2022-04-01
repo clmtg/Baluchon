@@ -12,7 +12,7 @@ class TranslationService {
     
     // MARK: - var
     private static let urlDeepl = URL(string: "https://api-free.deepl.com/v2/translate")!
-    let apiKey = "ef9ffa17-3fcd-034d-f6e6-8ecc52656c02:fx"
+    let apiKey = ""
     
     //Session and data task used to perform REST calls
     let session: URLSession

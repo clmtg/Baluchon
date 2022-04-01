@@ -11,6 +11,7 @@ class TranslationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickerTargetLanguage.selectRow(5, inComponent:0, animated:true)
     }
     
     //DataDource for picker
@@ -39,7 +40,6 @@ class TranslationViewController: UIViewController {
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         dismissKeyboard()
     }
-    
     
     // MARK: - Functions
     private func processTranslation(){
@@ -85,6 +85,6 @@ extension TranslationViewController: UIPickerViewDataSource{
 
 extension TranslationViewController: UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Array(availableLanguages)[row].value
+        return Array(availableLanguages.sorted(by: { $0.0 < $1.0 }))[row].value
     }
 }

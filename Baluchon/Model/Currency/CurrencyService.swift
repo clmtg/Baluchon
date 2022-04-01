@@ -11,7 +11,7 @@ class CurrencyService {
     
     // MARK: - Vars
     //Fixer URL to reach the API
-    private static let urlFixer = URL(string: "http://data.fixer.io/api/latest?access_key=5c23a9b10d02702cc8d59361ca78cc83")!
+    private static let urlFixer = URL(string: "http://data.fixer.io/api/latest?access_key=")!
     
     //Session and data task used to perform REST calls
     let session: URLSession

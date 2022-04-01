@@ -12,7 +12,7 @@ class WeatherService {
         
     // MARK: - Vars
     //OpenWeather URL to reach the API
-    private static let urlOpenWeather = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=40.7127281&lon=-74.0060152&appid=a4b4a7ca2573a4498b50ac984573b1f9")!
+    private static let urlOpenWeather = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=40.7127281&lon=-74.0060152&appid=")!
     
     //Session and data task used to perform REST calls
     let session: URLSession
