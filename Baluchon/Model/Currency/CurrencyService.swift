@@ -10,6 +10,9 @@ import Foundation
 class CurrencyService {
     
     // MARK: - Vars
+    //Fixer api key from ApiKeys.plist file
+    private var apiKey = URL.getApiKey(pListFile: "ApiKeys", for: "FixerApiKey")
+    
     //Fixer URL to reach the API
     private static let urlFixer = URL(string: "http://data.fixer.io/api/latest?access_key=")!
     

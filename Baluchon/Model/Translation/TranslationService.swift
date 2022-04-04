@@ -23,8 +23,6 @@ class TranslationService {
         self.session = session
     }
     
-    
-    
     // MARK: - Functions
     func translateText(text: String?,from srcLang: String?, to targetLang: String?, callback: @escaping (Result<TranslationStruct, ServiceError>) -> Void){
         
