@@ -85,6 +85,17 @@ extension TranslationViewController: UIPickerViewDataSource{
 
 extension TranslationViewController: UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Array(availableLanguages.sorted(by: { $0.0 < $1.0 }))[row].value
+        return Array(availableLanguages)[row].value
     }
 }
+
+//Extension used to hide iOS keyboard when Return button is tapped
+extension TranslationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        processTranslation()
+        return true
+    }
+
+}
+
