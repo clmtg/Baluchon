@@ -15,6 +15,7 @@
 		EB1D3F8127F06B670080E649 /* CurrencyStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D3F8027F06B670080E649 /* CurrencyStruct.swift */; };
 		EB204CDF27FAF7F200115142 /* ExtensionUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB204CDE27FAF7F100115142 /* ExtensionUrl.swift */; };
 		EB204CE127FB035200115142 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EB204CE027FB035200115142 /* .gitignore */; };
+		EB204CE327FB044000115142 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB204CE227FB044000115142 /* ApiKeys.plist */; };
 		EB935F6B27F5A6A400C7A38A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EB935F6A27F5A6A400C7A38A /* README.md */; };
 		EB935F6F27F5D92600C7A38A /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB935F6E27F5D92600C7A38A /* TranslationViewController.swift */; };
 		EB935F7127F5DCA700C7A38A /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB935F7027F5DCA700C7A38A /* TranslationService.swift */; };
@@ -37,6 +38,7 @@
 		EB1D3F8027F06B670080E649 /* CurrencyStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyStruct.swift; sourceTree = "<group>"; };
 		EB204CDE27FAF7F100115142 /* ExtensionUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUrl.swift; sourceTree = "<group>"; };
 		EB204CE027FB035200115142 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EB204CE227FB044000115142 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		EB935F6A27F5A6A400C7A38A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EB935F6E27F5D92600C7A38A /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
 		EB935F7027F5DCA700C7A38A /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		EBA5ECF027F063E700292CD0 /* Baluchon */ = {
 			isa = PBXGroup;
 			children = (
+				EB204CE227FB044000115142 /* ApiKeys.plist */,
 				EB1BEEE327F19FF20060D7A1 /* Extensions */,
 				EBA5ED0827F0641400292CD0 /* Controller */,
 				EBA5ED0727F0640F00292CD0 /* View */,
@@ -257,6 +260,7 @@
 				EB935F6B27F5A6A400C7A38A /* README.md in Resources */,
 				EBA5ECF927F063E700292CD0 /* Main.storyboard in Resources */,
 				EB204CE127FB035200115142 /* .gitignore in Resources */,
+				EB204CE327FB044000115142 /* ApiKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
