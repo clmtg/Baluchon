@@ -9,10 +9,8 @@ import Foundation
 
 /// Class which handle the weather data needs for the Baluchon's app
 class WeatherService {
-        
+    
     // MARK: - Vars
-    //OpenWeather URL to reach the API
-    private static let urlOpenWeather = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=40.7127281&lon=-74.0060152&appid=")!
     
     //Session and data task used to perform REST calls
     let session: URLSession
@@ -32,7 +30,7 @@ class WeatherService {
     ///   - callback: how to process data once gathered
     func retreiveWeatherFor(callback: @escaping (Result<weatherStruct, ServiceError>) -> Void) {
         task?.cancel()
-        task = session.dataTask(with: WeatherService.urlOpenWeather) { data, response, error in
+        task = session.dataTask(with: locationBaseWeatherEndpoint(lat: "40.7127281", lon: "-74.0060152")) { data, response, error in
             guard let data = data, error == nil else {
                 callback(.failure(.corruptData))
                 return
@@ -50,5 +48,14 @@ class WeatherService {
             }
         }
         task?.resume()
+    }
+    
+    /// Generate the needed URL endpoint in order to retreive the current weather for a specific location
+    /// - Parameters:
+    ///   - lat: location latitude
+    ///   - lon: location longitude
+    /// - Returns: URL needed to perform rest call, using the location datas provided
+    func locationBaseWeatherEndpoint(lat: String, lon: String) -> URL {
+        return WeatherEndpoint(path: "weather", queryItems: [URLQueryItem(name: "lat", value: lat), URLQueryItem(name: "lon", value: lon)]).url
     }
 }
