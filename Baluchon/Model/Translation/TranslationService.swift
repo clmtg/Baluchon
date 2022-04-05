@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Class which handle the weather data needs for the Baluchon's app
+/// Class which handle the translation data needs for the Baluchon's app
 class TranslationService {
     
     // MARK: - var
@@ -25,7 +25,7 @@ class TranslationService {
     
     // MARK: - Functions
     func translateText(text: String?,from srcLang: String?, to targetLang: String?, callback: @escaping (Result<TranslationStruct, ServiceError>) -> Void){
-        
+        //Perform checks against input provided by user
         guard let text = text,  text.isEmpty == false else {
             callback(.failure(.missingText))
             return
@@ -39,6 +39,7 @@ class TranslationService {
             callback(.failure(.missingSourceLangue))
             return
         }
+        //At this stage, user provided all input needed to proceed
         
         var request = URLRequest(url: TranslationService.urlDeepl)
         request.httpMethod = "POST"

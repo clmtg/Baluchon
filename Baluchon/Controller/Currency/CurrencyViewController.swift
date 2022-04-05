@@ -37,14 +37,12 @@ class CurrencyViewController: UIViewController {
         toggleActivityIndicator(indicator: activityIndicator)
         convertAmount()
         toggleActivityIndicator(indicator: activityIndicator)
-        dismissKeyboard()
+        dismissKeyboard(firstResponder: textFieldLocalAmount)
     }
     
-    // User to hide keyboard when the user touch the
-    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-        dismissKeyboard()
+    @IBAction func tappedToHideKeyboard(_ sender: Any) {
+        dismissKeyboard(firstResponder: textFieldLocalAmount)
     }
-    
     
     // MARK: - Functions
     /// Convert the amount provided by the user and display it within the view
@@ -85,10 +83,5 @@ class CurrencyViewController: UIViewController {
         
         let finalAmount = currency.convertAmount(from: untextFieldLocalAmount, with: rateUSD)
         labelResult.text = String(format: "%.2f", finalAmount)
-    }
-    
-    /// Make the UITextField textFieldLocalAmount  no longer the first responder
-    func dismissKeyboard() {
-        textFieldLocalAmount.resignFirstResponder()
     }
 }

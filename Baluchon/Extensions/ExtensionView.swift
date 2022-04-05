@@ -17,13 +17,11 @@ extension UIViewController {
     ///   - actions: List of action otpions which could be included within the alert. (By default = nil)
     func displayAnAlert(title: String, message: String, actions: [UIAlertAction]?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
         if let actions = actions {
             for action in actions {
                 alert.addAction(action)
             }
         }
-        
         alert.addAction(UIAlertAction(title: "OK", style:.default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
@@ -33,5 +31,11 @@ extension UIViewController {
     /// - Parameter indicator: Affected activity indicator to toggle
     func toggleActivityIndicator(indicator: UIActivityIndicatorView) {
         indicator.isHidden = !indicator.isHidden
+    }
+    
+    /// Hide the iOS keyboatd. When called the UITextField provided is no longer first responder
+    /// - Parameter firstResponder:UITextField to make resign
+    func dismissKeyboard(firstResponder: UITextField) {
+        firstResponder.resignFirstResponder()
     }
 }

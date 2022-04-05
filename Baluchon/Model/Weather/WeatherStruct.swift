@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Struct which defines the weather conditions received from OpenWeather API
 struct weatherStruct: Decodable {
     
     let coord: [String: Double]
@@ -25,14 +26,14 @@ struct weatherStruct: Decodable {
     
 }
 
-struct Weather: Codable {
+struct Weather: Decodable {
     let id: Int
     let main: String
     let description: String
     let icon: String
 }
 
-struct Sys: Codable {
+struct Sys: Decodable {
     let type: Int
     let id: Int
     let country: String

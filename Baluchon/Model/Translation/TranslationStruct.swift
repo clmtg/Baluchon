@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Struct which defines the translation received from Deepl API
 struct TranslationStruct: Decodable {
     let translations: [Sentence]
 }

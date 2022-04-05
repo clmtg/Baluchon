@@ -38,7 +38,7 @@ class TranslationViewController: UIViewController {
     }
     // User to hide keyboard when the user touch the
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-        dismissKeyboard()
+        dismissKeyboard(firstResponder: textFieldLocalText)
     }
     
     // MARK: - Functions
@@ -64,14 +64,10 @@ class TranslationViewController: UIViewController {
             }
         }
     }
-    
-    /// Make the UITextField   no longer the first responder
-    func dismissKeyboard() {
-        textFieldLocalText.resignFirstResponder()
-    }
 }
 
-// MARK: - Extensions
+// MARK: - Extensions - PickerView
+//Extensions related to the PickerView feature
 extension TranslationViewController: UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -80,7 +76,6 @@ extension TranslationViewController: UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return availableLanguages.count
     }
-    
 }
 
 extension TranslationViewController: UIPickerViewDelegate{
@@ -89,13 +84,13 @@ extension TranslationViewController: UIPickerViewDelegate{
     }
 }
 
-//Extension used to hide iOS keyboard when Return button is tapped
+
+// MARK: - Extensions - Keyboard
+//Extensions related to the iOS keyboard
 extension TranslationViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        dismissKeyboard(firstResponder: textField)
         processTranslation()
         return true
     }
-
 }
-

@@ -11,36 +11,33 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadWeatherDatas()
-        toggleLoadingScreen(display: false)
+        loadWeatherDatas(lat: "40.7127281", lon: "-74.0060152")
     }
     
     // MARK: - Var
     //Instance of the Weather data provider model
     private let weather = WeatherService()
+    private var cityListCurrentWeather = [weatherStruct]()
     
     // MARK: - IBOutlets
-    @IBOutlet weak var stackViewLoading: UIStackView!
-    @IBOutlet weak var stackViewCity: UIStackView!
-    @IBOutlet weak var cityLabel: UILabel!
-    
+    @IBOutlet weak var cityListTableView: UITableView!
     
     // MARK: - IBActions
-    @IBAction func tappedRefrehButton(_ sender: Any) {
-        toggleLoadingScreen(display: true)
-        loadWeatherDatas()
-        toggleLoadingScreen(display: false)
+    @IBAction func londonButtonTapped(_ sender: Any) {
+        loadWeatherDatas(lat: "46.3295", lon: "12.1122")
     }
+    
     
     // MARK: - Functions
     /// Retreive the weather datas using the model instance.
-    func loadWeatherDatas(){
+    func loadWeatherDatas(lat: String, lon: String){
         
-        weather.retreiveWeatherFor() { [weak self] result in
+        weather.retreiveWeatherFor(lat: lat, lon: lon) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
-                    self?.displayWeatherData(weatherData: data)
+                    self!.addWeatherFor(weatherData: data)
+                    
                 case .failure(let error):
                     let openSettingsAction = UIAlertAction(title: "Open Wi-Fi settings", style: .default) { actionTonOpen in
                         if let url = URL.init(string: UIApplication.openSettingsURLString) {
@@ -54,17 +51,35 @@ class WeatherViewController: UIViewController {
         }
     }
     
-    /// Display the weather's data retrived into the label UILabel
-    /// - Parameter weatherData: Weather do diplay.
-    func displayWeatherData(weatherData: weatherStruct) {
-        let text = "\(weatherData.name) \nCondition: \(weatherData.weather[0].description)\nCurrent temp: \(weatherData.main["temp"]!)\nMin: \(weatherData.main["temp_min"]!)\nMax: \(weatherData.main["temp_max"]!)"
-        cityLabel.text = text
+    
+    
+    /// Add weather data within a list to be displayed by the TableView, then the table view is reloaded
+    /// - Parameter weatherData: weather data to display within the TableView
+    func addWeatherFor(weatherData: weatherStruct) {
+        cityListCurrentWeather.append(weatherData)
+        cityListTableView.reloadData()
     }
     
-    /// Used to display the loading screen.
-    /// - Parameter display: True to display the loading view. False to hide
-    func toggleLoadingScreen(display: Bool){
-        stackViewLoading.isHidden = !display
-        stackViewCity.isHidden = display
+}
+
+// MARK: - Extensions
+
+//To conform at UITableViewDataSource protocol. (this is required to diplay current city list weather within a table view)
+extension WeatherViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cityListCurrentWeather.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CityTableViewCell", for: indexPath) as? CityTableViewCell else {
+           return UITableViewCell()
+        }
+        
+        let index = indexPath.row
+        let affectedCity = cityListCurrentWeather[index]
+        cell.configure(for: affectedCity.name, condition: affectedCity.weather[0].description, temp: "Temp: \(affectedCity.main["temp"]!) Min: \(affectedCity.main["temp_min"]!) Max: \(affectedCity.main["temp_max"]!)")
+        return cell
+
     }
 }

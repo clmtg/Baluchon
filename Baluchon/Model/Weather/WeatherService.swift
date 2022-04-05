@@ -11,7 +11,6 @@ import Foundation
 class WeatherService {
     
     // MARK: - Vars
-    
     //Session and data task used to perform REST calls
     let session: URLSession
     var task: URLSessionDataTask?
@@ -22,15 +21,14 @@ class WeatherService {
     }
     
     // MARK: - Functions
-    
     /// Retreive the current weather for a given long and lat using the openweathermap API
     /// - Parameters:
     ///   - lon: longitude of the location weather data request
     ///   - lat: latitude of the location weather data request
     ///   - callback: how to process data once gathered
-    func retreiveWeatherFor(callback: @escaping (Result<weatherStruct, ServiceError>) -> Void) {
+    func retreiveWeatherFor(lat: String, lon: String, callback: @escaping (Result<weatherStruct, ServiceError>) -> Void) {
         task?.cancel()
-        task = session.dataTask(with: locationBaseWeatherEndpoint(lat: "40.7127281", lon: "-74.0060152")) { data, response, error in
+        task = session.dataTask(with: locationBaseWeatherEndpoint(lat: lat, lon: lon)) { data, response, error in
             guard let data = data, error == nil else {
                 callback(.failure(.corruptData))
                 return

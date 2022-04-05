@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Enumeration which list the error case for the services used here.
 enum ServiceError: Error {
     case corruptData
     case unexpectedResponse
