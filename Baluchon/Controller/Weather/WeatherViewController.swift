@@ -73,13 +73,28 @@ extension WeatherViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CityTableViewCell", for: indexPath) as? CityTableViewCell else {
-           return UITableViewCell()
+            return UITableViewCell()
         }
         
         let index = indexPath.row
         let affectedCity = cityListCurrentWeather[index]
         cell.configure(for: affectedCity.name, condition: affectedCity.weather[0].description, temp: "Temp: \(affectedCity.main["temp"]!) Min: \(affectedCity.main["temp_min"]!) Max: \(affectedCity.main["temp_max"]!)")
         return cell
-
+        
     }
 }
+
+
+//To conform at UITableViewDDelegate protocol. (this is required to edit current city list weather within a table view)
+extension WeatherViewController: UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            cityListCurrentWeather.remove(at: indexPath.row)
+            cityListTableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+    }
+}
+
+
