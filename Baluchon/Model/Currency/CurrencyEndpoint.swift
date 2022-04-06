@@ -11,7 +11,7 @@ import Foundation
 struct CurrencyEndpoint {
     
     // MARK: - Vars
-    private let apikey = URLQueryItem(name: "access_key", value: "ec8f2dadd832383f4f0f2402f5747a43")
+    private let apikey = URLQueryItem(name: "access_key", value: ApiKeys.fixer)
     
     //The endpoint to reach. (Part added after the api address. E.g.: myapi.com/path)
     var path: String
