@@ -11,26 +11,33 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadWeatherDatas(lat: "40.7127281", lon: "-74.0060152")
+        collectWeatherDefaultCities()
     }
     
     // MARK: - Var
     //Instance of the Weather data provider model
     private let weather = WeatherService()
     private var cityListCurrentWeather = [weatherStruct]()
+    private var defaultCityList = [CityStruct(lat: "40.714272", lon: "-74.005966"), //NewYork
+                                   CityStruct(lat: "51.966671", lon: "-8.58333"), //Cork
+                                   CityStruct(lat: "48.853401", lon: "2.3486"), //Paris
+                                   CityStruct(lat: "44.833328", lon: "-0.56667"), //Bordeaux
+                                   CityStruct(lat: "45.4333", lon: "4.4") //Saint-Etienne
+                                   
+    ]
     
     // MARK: - IBOutlets
     @IBOutlet weak var cityListTableView: UITableView!
     
     // MARK: - IBActions
     @IBAction func londonButtonTapped(_ sender: Any) {
-        loadWeatherDatas(lat: "46.3295", lon: "12.1122")
+        collectWeatherDefaultCities()
     }
     
     
     // MARK: - Functions
     /// Retreive the weather datas using the model instance.
-    func loadWeatherDatas(lat: String, lon: String){
+    func loadWeatherDatas(lat: String, lon: String, group: DispatchGroup?){
         
         weather.retreiveWeatherFor(lat: lat, lon: lon) { [weak self] result in
             DispatchQueue.main.async {
@@ -46,6 +53,10 @@ class WeatherViewController: UIViewController {
                     }
                     let additionalAlertAction = [openSettingsAction]
                     self?.displayAnAlert(title: "Network error", message: "Fail to retreive weather data. \(error.description)\nPlease check your network settings", actions: additionalAlertAction)
+                }
+                
+                if let group = group {
+                    group.leave()
                 }
             }
         }
@@ -78,12 +89,11 @@ extension WeatherViewController: UITableViewDataSource{
         
         let index = indexPath.row
         let affectedCity = cityListCurrentWeather[index]
-        cell.configure(for: affectedCity.name, condition: affectedCity.weather[0].description, temp: "Temp: \(affectedCity.main["temp"]!) Min: \(affectedCity.main["temp_min"]!) Max: \(affectedCity.main["temp_max"]!)")
+        cell.configure(for: affectedCity.name, condition: affectedCity.weather[0].description, temp: "\(affectedCity.main["temp"]!)°C (Min: \(affectedCity.main["temp_min"]!)°C Max: \(affectedCity.main["temp_max"]!)°C)")
         return cell
         
     }
 }
-
 
 //To conform at UITableViewDDelegate protocol. (this is required to edit current city list weather within a table view)
 extension WeatherViewController: UITableViewDelegate{
@@ -95,6 +105,26 @@ extension WeatherViewController: UITableViewDelegate{
         }
         
     }
+}
+
+
+// MARK: - Extensions - Related to Dispatch Group
+
+extension WeatherViewController{
+    
+    func collectWeatherDefaultCities() {
+        
+        let group = DispatchGroup()
+        for city in defaultCityList {
+            group.enter()
+            self.loadWeatherDatas(lat: city.lat, lon: city.lon, group: group)
+        }
+        group.notify(queue: DispatchQueue.main) {
+            self.cityListTableView.reloadData()
+        }
+        
+    }
+    
 }
 
 

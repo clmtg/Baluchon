@@ -11,6 +11,7 @@ class TranslationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        customization()
         pickerTargetLanguage.selectRow(5, inComponent:0, animated:true)
     }
     
@@ -27,10 +28,12 @@ class TranslationViewController: UIViewController {
     
     // MARK: - IBOutlets
     //Text provided by the user which needs to be translated
-    @IBOutlet weak var textFieldLocalText: UITextField!
+    @IBOutlet weak var textViewLocalText: UITextView!
     //Text translated
-    @IBOutlet weak var labelForeignText: UILabel!
+    @IBOutlet weak var textViewForeignText: UITextView!
     @IBOutlet weak var pickerTargetLanguage: UIPickerView!
+    @IBOutlet weak var tranlationRequestButton: UIButton!
+    
     
     // MARK: - IBActions
     @IBAction func tappedButtonTranslate(_ sender: Any) {
@@ -38,16 +41,16 @@ class TranslationViewController: UIViewController {
     }
     // User to hide keyboard when the user touch the
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-        dismissKeyboard(firstResponder: textFieldLocalText)
+        textViewLocalText.resignFirstResponder()
     }
     
     // MARK: - Functions
     private func processTranslation(){
-        translationCore.translateText(text: textFieldLocalText.text, from: "FR", to: selectedTargetLanguageKey) { [weak self] result in
+        translationCore.translateText(text: textViewLocalText.text, from: "FR", to: selectedTargetLanguageKey) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
-                    self?.labelForeignText.text = data.translations[0].text
+                    self?.textViewForeignText.text = data.translations[0].text
                 case .failure(let error):
                     var additionalAlertAction: [UIAlertAction]?
                     if error == .corruptData || error == .jsonInvalid || error == .unexpectedResponse {
@@ -87,10 +90,23 @@ extension TranslationViewController: UIPickerViewDelegate{
 
 // MARK: - Extensions - Keyboard
 //Extensions related to the iOS keyboard
-extension TranslationViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        dismissKeyboard(firstResponder: textField)
+extension TranslationViewController: UITextViewDelegate {
+    func textViewShouldEndEditing(_ textField: UITextView) -> Bool {
+        textViewLocalText.resignFirstResponder()
         processTranslation()
         return true
     }
+    
+}
+
+
+// MARK: - Extensions - View customization
+extension TranslationViewController {
+   
+    func customization() {
+
+
+    }
+    
+    
 }

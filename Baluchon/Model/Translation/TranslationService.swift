@@ -10,13 +10,9 @@ import Foundation
 /// Class which handle the translation data needs for the Baluchon's app
 class TranslationService {
     
-    // MARK: - var
-    private static let urlDeepl = URL(string: "https://api-free.deepl.com/v2/translate")!
-    private let apiKey = "ef9ffa17-3fcd-034d-f6e6-8ecc52656c02:fx"
-    
+    // MARK: - var    
     //Session and data task used to perform REST calls
     let session: URLSession
-    var task: URLSessionDataTask?
     
     //Class initializer
     init(session: URLSession = .shared) {
@@ -40,30 +36,8 @@ class TranslationService {
             return
         }
         //At this stage, user provided all input needed to proceed
-        
-        var request = URLRequest(url: TranslationService.urlDeepl)
-        request.httpMethod = "POST"
-        let body = "text=\(text)&target_lang=\(targetLang)&auth_key=\(self.apiKey)"
-        request.httpBody = body.data(using: .utf8)
-        
-        task?.cancel()
-        task = session.dataTask(with: request, completionHandler: { data, response, error in
-            guard let data = data, error == nil else {
-                callback(.failure(.corruptData))
-                return
-            }
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                callback(.failure(.unexpectedResponse))
-                return
-            }
-            do {
-                let responseJSON = try JSONDecoder().decode(TranslationStruct.self, from: data)
-                callback(.success(responseJSON))
-            } catch  {
-                callback(.failure(.jsonInvalid))
-            }
-        })
-        task?.resume()
+        session.dataTask(url: TranslationEndpoint.basic(for: text, to: targetLang), completionHandler: callback)
+    
     }
 }
 

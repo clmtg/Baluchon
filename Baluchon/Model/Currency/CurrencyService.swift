@@ -12,7 +12,6 @@ class CurrencyService {
     // MARK: - Vars
     //Session and data task used to perform REST calls
     let session: URLSession
-    var task: URLSessionDataTask?
     
     //Class initializer
     init(session: URLSession = .shared) {
@@ -24,38 +23,7 @@ class CurrencyService {
     /// Description
     /// - Parameter callback: callback description
     func retreiveRates(callback: @escaping (Result<CurrencyStruct, ServiceError>) -> Void) {
-        task?.cancel()
-        task = session.dataTask(with: CurrencyEndpoint.latest.url) { data, response, error in
-            guard let data = data, error == nil else {
-                callback(.failure(.corruptData))
-                return
-            }
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                callback(.failure(.unexpectedResponse))
-                return
-            }
-            
-            /* 2 implementations available here
-             
-             -----> 1. By using guard
-             
-             guard let responseJSON = try? JSONDecoder().decode(CurrencyStruct.self, from: data) else {
-             callback(.success(responseJSON))
-             return
-             }
-             
-             -----> 2. By using do cach
-             
-             */
-            
-            do {
-                let responseJSON = try JSONDecoder().decode(CurrencyStruct.self, from: data)
-                callback(.success(responseJSON))
-            } catch  {
-                callback(.failure(.jsonInvalid))
-            }
-        }
-        task?.resume()
+        session.dataTask(url: CurrencyEndpoint.latest(), completionHandler: callback)
     }
     
     /// Convert an amount using the provided rates (The real purpose of this function is to keep the data logic within the model rather than the view controller)

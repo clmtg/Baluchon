@@ -7,7 +7,7 @@
 
 import Foundation
 
-//Enumeration which list the error case for the services used here.
+//Enumeration which list the error case for the services used within the Baluchon app
 enum ServiceError: Error {
     case corruptData
     case unexpectedResponse

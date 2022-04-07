@@ -11,11 +11,8 @@ import Foundation
 struct WeatherEndpoint {
     
     // MARK: - Vars
-    private let apikey = URLQueryItem(name: "appid", value: "c92a42bb4cc3d698309ee68234129dcc")
-    
     //The endpoint to reach. (Part added after the api address. E.g.: myapi.com/path)
     var path: String
-    
     //ParamS to add within the endpoints
     var queryItems: [URLQueryItem] = []
     
@@ -27,7 +24,6 @@ struct WeatherEndpoint {
         components.host = "api.openweathermap.org"
         components.path = "/data/2.5/" + path
         components.queryItems = queryItems
-        components.queryItems?.append(apikey)
         
         guard let url = components.url else {
             preconditionFailure(
@@ -37,10 +33,25 @@ struct WeatherEndpoint {
         return url
     }
     
-    // MARK: - Vars Statics
+}
+
+    // MARK: - Functions
+
+extension WeatherEndpoint {
     
-    //Endpoint for the current weather
-    static var weather: Self {
-        WeatherEndpoint(path: "weather")
+    /// Return the endpoint to reach in order to get current weather data for a given location
+    /// - Parameters:
+    ///   - lat: latitude location
+    ///   - lon: longitude location
+    /// - Returns: Endpoint to reach
+    static func weatherOneLocation(lat: String, lon: String) -> URL {
+        let endpoint = WeatherEndpoint(path: "weather", queryItems: [
+            .init(name: "lat", value: lat),
+            .init(name: "lon", value: lon),
+            .init(name: "appid", value: ApiKeys.openWeather),
+            .init(name: "units", value: "metric"),
+            .init(name: "lang", value: "fr")
+        ])
+        return endpoint.url
     }
 }
