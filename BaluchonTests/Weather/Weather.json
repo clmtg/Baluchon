@@ -1,0 +1,43 @@
+{
+    "coord": {
+        "lon": 4.4,
+        "lat": 45.4333
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "ciel dégagé",
+            "icon": "01d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 15.62,
+        "feels_like": 14.18,
+        "temp_min": 15.62,
+        "temp_max": 17.64,
+        "pressure": 1011,
+        "humidity": 36
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 6.17,
+        "deg": 190
+    },
+    "clouds": {
+        "all": 0
+    },
+    "dt": 1649773651,
+    "sys": {
+        "type": 1,
+        "id": 6508,
+        "country": "FR",
+        "sunrise": 1649739754,
+        "sunset": 1649787806
+    },
+    "timezone": 7200,
+    "id": 2980291,
+    "name": "Saint-Étienne",
+    "cod": 200
+}

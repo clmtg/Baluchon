@@ -23,22 +23,15 @@ class WeatherViewController: UIViewController {
                                    CityStruct(lat: "48.853401", lon: "2.3486"), //Paris
                                    CityStruct(lat: "44.833328", lon: "-0.56667"), //Bordeaux
                                    CityStruct(lat: "45.4333", lon: "4.4") //Saint-Etienne
-                                   
     ]
     
     // MARK: - IBOutlets
     @IBOutlet weak var cityListTableView: UITableView!
-    
-    // MARK: - IBActions
-    @IBAction func londonButtonTapped(_ sender: Any) {
-        collectWeatherDefaultCities()
-    }
-    
+    @IBOutlet weak var loadingStackView: UIStackView!
     
     // MARK: - Functions
     /// Retreive the weather datas using the model instance.
     func loadWeatherDatas(lat: String, lon: String, group: DispatchGroup?){
-        
         weather.retreiveWeatherFor(lat: lat, lon: lon) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -62,36 +55,30 @@ class WeatherViewController: UIViewController {
         }
     }
     
-    
-    
     /// Add weather data within a list to be displayed by the TableView, then the table view is reloaded
     /// - Parameter weatherData: weather data to display within the TableView
     func addWeatherFor(weatherData: weatherStruct) {
         cityListCurrentWeather.append(weatherData)
         cityListTableView.reloadData()
     }
-    
 }
 
-// MARK: - Extensions
-
+// MARK: - Extensions - Related to Table View
 //To conform at UITableViewDataSource protocol. (this is required to diplay current city list weather within a table view)
 extension WeatherViewController: UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cityListCurrentWeather.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CityTableViewCell", for: indexPath) as? CityTableViewCell else {
             return UITableViewCell()
         }
-        
         let index = indexPath.row
         let affectedCity = cityListCurrentWeather[index]
         cell.configure(for: affectedCity.name, condition: affectedCity.weather[0].description, temp: "\(affectedCity.main["temp"]!)°C (Min: \(affectedCity.main["temp_min"]!)°C Max: \(affectedCity.main["temp_max"]!)°C)")
         return cell
-        
     }
 }
 
@@ -103,17 +90,14 @@ extension WeatherViewController: UITableViewDelegate{
             cityListCurrentWeather.remove(at: indexPath.row)
             cityListTableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        
     }
 }
 
-
 // MARK: - Extensions - Related to Dispatch Group
-
 extension WeatherViewController{
     
     func collectWeatherDefaultCities() {
-        
+        toggleActivityIndicator(hide: cityListTableView, display: loadingStackView)
         let group = DispatchGroup()
         for city in defaultCityList {
             group.enter()
@@ -121,10 +105,9 @@ extension WeatherViewController{
         }
         group.notify(queue: DispatchQueue.main) {
             self.cityListTableView.reloadData()
+            self.toggleActivityIndicator(hide: self.loadingStackView, display: self.cityListTableView)
         }
-        
+    
     }
     
 }
-
-

@@ -9,4 +9,6 @@ Baluchon is nothing more than you personal assistante right in your pocket. With
 
 Enjoy Baluchon and safe travel to you.
 
+![](./mockup.jpg)
+
 ## Additional information

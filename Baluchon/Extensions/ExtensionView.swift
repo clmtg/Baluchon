@@ -9,7 +9,6 @@ import UIKit
 
 
 extension UIViewController {
-    
     /// Display an iOS alrt to the user
     /// - Parameters:
     ///   - title: Alert's title
@@ -26,16 +25,15 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    
-    /// Toggle if an activity indicator display
-    /// - Parameter indicator: Affected activity indicator to toggle
-    func toggleActivityIndicator(indicator: UIActivityIndicatorView) {
-        indicator.isHidden = !indicator.isHidden
-    }
-    
     /// Hide the iOS keyboatd. When called the UITextField provided is no longer first responder
     /// - Parameter firstResponder:UITextField to make resign
     func dismissKeyboard(firstResponder: UITextField) {
         firstResponder.resignFirstResponder()
+    }
+    
+    
+    func toggleActivityIndicator(hide: UIView, display: UIView) {
+        hide.isHidden = true
+        display.isHidden = false
     }
 }

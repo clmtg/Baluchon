@@ -11,7 +11,6 @@ class TranslationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customization()
         pickerTargetLanguage.selectRow(5, inComponent:0, animated:true)
     }
     
@@ -31,20 +30,23 @@ class TranslationViewController: UIViewController {
     @IBOutlet weak var textViewLocalText: UITextView!
     //Text translated
     @IBOutlet weak var textViewForeignText: UITextView!
+    //Picker view for target language
     @IBOutlet weak var pickerTargetLanguage: UIPickerView!
+    //Button to process translation
     @IBOutlet weak var tranlationRequestButton: UIButton!
-    
     
     // MARK: - IBActions
     @IBAction func tappedButtonTranslate(_ sender: Any) {
         processTranslation()
     }
-    // User to hide keyboard when the user touch the
+    
+    // Used to hide keyboard when there is a user gesture
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         textViewLocalText.resignFirstResponder()
     }
     
     // MARK: - Functions
+    /// Process translation using translationService core
     private func processTranslation(){
         translationCore.translateText(text: textViewLocalText.text, from: "FR", to: selectedTargetLanguageKey) { [weak self] result in
             DispatchQueue.main.async {
@@ -96,17 +98,5 @@ extension TranslationViewController: UITextViewDelegate {
         processTranslation()
         return true
     }
-    
-}
-
-
-// MARK: - Extensions - View customization
-extension TranslationViewController {
-   
-    func customization() {
-
-
-    }
-    
     
 }

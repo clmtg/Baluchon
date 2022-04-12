@@ -36,7 +36,6 @@ struct WeatherEndpoint {
 }
 
     // MARK: - Functions
-
 extension WeatherEndpoint {
     
     /// Return the endpoint to reach in order to get current weather data for a given location

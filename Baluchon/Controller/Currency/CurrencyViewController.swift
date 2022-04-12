@@ -11,10 +11,7 @@ class CurrencyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
-    
     
     // MARK: - Var
     //Instance of the model
@@ -25,18 +22,18 @@ class CurrencyViewController: UIViewController {
     @IBOutlet weak var textFieldLocalAmount: UITextField!
     //Label used to display amount converted
     @IBOutlet weak var labelResult: UILabel!
-    //Activity indicator to display while network calls are being performed
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     //Button used to request convertion by user
     @IBOutlet weak var buttonConvert: UIButton!
+    @IBOutlet weak var loadingStackView: UIStackView!
+    @IBOutlet weak var stackViewInput: UIStackView!
     
     
     // MARK: - IBActions
     // Functions call when the user tapped on Convert button
     @IBAction func tappedConvertButton(_ sender: Any) {
-        toggleActivityIndicator(indicator: activityIndicator)
+        toggleActivityIndicator(hide: stackViewInput, display: loadingStackView)
         convertAmount()
-        toggleActivityIndicator(indicator: activityIndicator)
+        toggleActivityIndicator(hide: loadingStackView, display: stackViewInput)
         dismissKeyboard(firstResponder: textFieldLocalAmount)
     }
     
@@ -82,6 +79,6 @@ class CurrencyViewController: UIViewController {
         }
         
         let finalAmount = currency.convertAmount(from: untextFieldLocalAmount, with: rateUSD)
-        labelResult.text = String(format: "%.2f", finalAmount)
+        labelResult.text = String(format: "%.2f $", finalAmount)
     }
 }

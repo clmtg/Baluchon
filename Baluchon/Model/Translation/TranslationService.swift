@@ -32,7 +32,7 @@ class TranslationService {
         }
         
         guard let targetLang = targetLang,  targetLang.isEmpty == false else {
-            callback(.failure(.missingSourceLangue))
+            callback(.failure(.missingTargetLangue))
             return
         }
         //At this stage, user provided all input needed to proceed
