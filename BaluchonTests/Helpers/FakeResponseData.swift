@@ -12,7 +12,7 @@ final class FakeResponseData {
     // MARK: - URL
     static let currencyUrl: URL = URL(string: "http://data.fixer.io/api/latest?access_key=\(ApiKeys.fixer)")!
     static let weatherUrl: URL = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=45.4333&lon=4.4&appid=\(ApiKeys.openWeather)&units=metric&lang=fr")!
-    static let translationUrl: URL = URL(string: "https://api-free.deepl.com/v2/translate?auth_key=\(ApiKeys.deepl)&text=J%E2%80%99ai%20une%20voiture%20rouge&target_lang=EN-GB")!
+    static let translationUrl: URL = URL(string: "https://api-free.deepl.com/v2/translate?auth_key=\(ApiKeys.deepl)&text=J'ai%20une%20voiture%20rouge&target_lang=EN-GB")!
     
     // MARK: - Responses
     static let validResponse = HTTPURLResponse(url: URL(string: "https://www.apple.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)!
