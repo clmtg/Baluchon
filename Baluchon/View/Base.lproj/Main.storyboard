@@ -45,16 +45,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount in Euro" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7wl-tg-Bjc">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="290.33333333333331" height="34"/>
                                                 <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="KyU-6O-UJx"/>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5L-tb-xC9">
-                                                <rect key="frame" x="205" y="0.0" width="125" height="34"/>
+                                                <rect key="frame" x="295.33333333333331" y="0.0" width="34.666666666666686" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="6FJ-va-qSi"/>
                                                 </constraints>
@@ -176,7 +173,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="go"/>
-                                        <dataDetectorType key="dataDetectorTypes" lookupSuggestion="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="C9X-y5-B9q" id="CTu-Yz-ks8"/>
                                         </connections>
