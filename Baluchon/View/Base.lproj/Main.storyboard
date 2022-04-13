@@ -303,7 +303,7 @@
                                 <rect key="frame" x="-19" y="-82.666666666666686" width="428" height="926.33333333333348"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ah2-0g-wri">
-                                <rect key="frame" x="30" y="84" width="330" height="667"/>
+                                <rect key="frame" x="30" y="84" width="330" height="616"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityTableViewCell" rowHeight="132" id="cVQ-qH-212" customClass="CityTableViewCell" customModule="Baluchon" customModuleProvider="target">
@@ -408,18 +408,31 @@
                                     <constraint firstAttribute="height" constant="100" id="kpR-uI-yjF"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Q8-j7-CT0">
+                                <rect key="frame" x="40" y="720" width="310" height="31"/>
+                                <color key="backgroundColor" red="0.1379566491" green="0.16295212510000001" blue="0.27488473060000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reload"/>
+                                <connections>
+                                    <action selector="tappedReloadButton:" destination="Pea-Ie-LqA" eventType="touchUpInside" id="K31-VI-YoR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oe2-O1-86p"/>
                         <color key="backgroundColor" red="0.84900957349999995" green="0.94310396910000005" blue="0.99784690139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ah2-0g-wri" firstAttribute="top" secondItem="Oe2-O1-86p" secondAttribute="top" constant="40" id="9TD-dh-Sks"/>
                             <constraint firstItem="TlE-aH-wjr" firstAttribute="leading" secondItem="Oe2-O1-86p" secondAttribute="leading" constant="90" id="FNR-1l-o6i"/>
+                            <constraint firstItem="Oe2-O1-86p" firstAttribute="bottom" secondItem="9Q8-j7-CT0" secondAttribute="bottom" constant="10" id="VnG-Jv-J6T"/>
                             <constraint firstItem="WHk-HD-QVD" firstAttribute="centerY" secondItem="0Va-H3-3EX" secondAttribute="centerY" id="XIB-EP-GkK"/>
+                            <constraint firstItem="9Q8-j7-CT0" firstAttribute="leading" secondItem="Oe2-O1-86p" secondAttribute="leading" constant="40" id="XIz-xa-MW1"/>
                             <constraint firstItem="WHk-HD-QVD" firstAttribute="centerX" secondItem="0Va-H3-3EX" secondAttribute="centerX" id="XU6-Zp-0Lr"/>
-                            <constraint firstItem="Oe2-O1-86p" firstAttribute="bottom" secondItem="ah2-0g-wri" secondAttribute="bottom" constant="10" id="XnE-zj-nrB"/>
                             <constraint firstItem="TlE-aH-wjr" firstAttribute="centerX" secondItem="0Va-H3-3EX" secondAttribute="centerX" id="Y8b-WE-aHc"/>
                             <constraint firstItem="ah2-0g-wri" firstAttribute="leading" secondItem="Oe2-O1-86p" secondAttribute="leading" constant="30" id="bDc-sN-s5P"/>
+                            <constraint firstItem="9Q8-j7-CT0" firstAttribute="top" secondItem="ah2-0g-wri" secondAttribute="bottom" constant="20" id="fxK-gT-o7V"/>
                             <constraint firstItem="Oe2-O1-86p" firstAttribute="trailing" secondItem="TlE-aH-wjr" secondAttribute="trailing" constant="90" id="hkt-bm-YK1"/>
+                            <constraint firstItem="Oe2-O1-86p" firstAttribute="trailing" secondItem="9Q8-j7-CT0" secondAttribute="trailing" constant="40" id="icy-aY-km4"/>
                             <constraint firstItem="Oe2-O1-86p" firstAttribute="trailing" secondItem="ah2-0g-wri" secondAttribute="trailing" constant="30" id="kzn-sv-2Js"/>
                             <constraint firstItem="TlE-aH-wjr" firstAttribute="centerY" secondItem="0Va-H3-3EX" secondAttribute="centerY" id="z0e-0U-5b5"/>
                         </constraints>
@@ -432,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4p-8t-1Cs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-437.60000000000002" y="-526.10837438423653"/>
+            <point key="canvasLocation" x="-438.46153846153845" y="-526.77725118483409"/>
         </scene>
     </scenes>
     <resources>
