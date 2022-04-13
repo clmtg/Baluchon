@@ -8,11 +8,11 @@
 import Foundation
 
 /// Class which handle the translation data needs for the Baluchon's app
-class TranslationService {
+final class TranslationService {
     
     // MARK: - var    
     //Session and data task used to perform REST calls
-    let session: URLSession
+    private let session: URLSession
     
     //Class initializer
     init(session: URLSession = .shared) {
@@ -37,7 +37,6 @@ class TranslationService {
         }
         //At this stage, user provided all input needed to proceed
         session.dataTask(url: TranslationEndpoint.basic(for: text, to: targetLang), completionHandler: callback)
-    
     }
 }
 

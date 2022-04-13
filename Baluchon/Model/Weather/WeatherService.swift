@@ -8,11 +8,11 @@
 import Foundation
 
 /// Class which handle the weather data needs for the Baluchon's app
-class WeatherService {
+final class WeatherService {
     
     // MARK: - Vars
     //Session and data task used to perform REST calls
-    let session: URLSession
+    private let session: URLSession
     
     //Class initializer
     init(session: URLSession = .shared) {

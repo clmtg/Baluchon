@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CurrencyViewController: UIViewController {
+final class CurrencyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +15,7 @@ class CurrencyViewController: UIViewController {
     
     // MARK: - Var
     //Instance of the model
-    let currency = CurrencyService()
+    private let currency = CurrencyService()
     
     // MARK: - IBOutlets
     //Text field where user provided amount to convert

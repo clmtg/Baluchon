@@ -11,7 +11,7 @@
 		EB1988E827F2DF5800F397C7 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1988E727F2DF5800F397C7 /* WeatherViewController.swift */; };
 		EB1988EA27F2E2FC00F397C7 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1988E927F2E2FC00F397C7 /* WeatherService.swift */; };
 		EB1988EC27F2E4F800F397C7 /* WeatherStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1988EB27F2E4F800F397C7 /* WeatherStruct.swift */; };
-		EB1BEEE727F1A01E0060D7A1 /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BEEE627F1A01E0060D7A1 /* ExtensionView.swift */; };
+		EB1BEEE727F1A01E0060D7A1 /* UIViewController+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BEEE627F1A01E0060D7A1 /* UIViewController+Utilities.swift */; };
 		EB1BEEE927F1A6F70060D7A1 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BEEE827F1A6F70060D7A1 /* ServiceError.swift */; };
 		EB1D3F8127F06B670080E649 /* CurrencyStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D3F8027F06B670080E649 /* CurrencyStruct.swift */; };
 		EB204CE127FB035200115142 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EB204CE027FB035200115142 /* .gitignore */; };
@@ -31,7 +31,6 @@
 		EBAB7E2C28057ED500F07D42 /* URLProtocolFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB7E2B28057ED500F07D42 /* URLProtocolFake.swift */; };
 		EBAB7E2E2805806600F07D42 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB7E2D2805806600F07D42 /* FakeResponseData.swift */; };
 		EBAB7E302805845900F07D42 /* Currency.json in Resources */ = {isa = PBXBuildFile; fileRef = EBAB7E2F2805845900F07D42 /* Currency.json */; };
-		EBAB7E3528059EAC00F07D42 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB7E3428059EAC00F07D42 /* ApiKeys.swift */; };
 		EBAB7E3C2805C5F200F07D42 /* Weather.json in Resources */ = {isa = PBXBuildFile; fileRef = EBAB7E3B2805C5F200F07D42 /* Weather.json */; };
 		EBAB7E3E2805C66900F07D42 /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB7E3D2805C66900F07D42 /* WeatherServiceTests.swift */; };
 		EBAB7E402805CC8500F07D42 /* Translation.json in Resources */ = {isa = PBXBuildFile; fileRef = EBAB7E3F2805CC8500F07D42 /* Translation.json */; };
@@ -40,7 +39,7 @@
 		EBC2EFA227F064D200A14D92 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2EFA127F064D200A14D92 /* CurrencyService.swift */; };
 		EBC2EFA527F0650E00A14D92 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2EFA427F0650D00A14D92 /* CurrencyViewController.swift */; };
 		EBEC831927FDBB7F00755FC4 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEC831827FDBB7F00755FC4 /* ApiKeys.swift */; };
-		EBEC831D27FDBE8D00755FC4 /* ExtensionUrlSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEC831C27FDBE8D00755FC4 /* ExtensionUrlSession.swift */; };
+		EBEC831D27FDBE8D00755FC4 /* URLSession+GenericNetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEC831C27FDBE8D00755FC4 /* URLSession+GenericNetworkCalls.swift */; };
 		EBF6751827FDD13000FD957B /* TranslationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF6751727FDD13000FD957B /* TranslationEndpoint.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +58,7 @@
 		EB1988E727F2DF5800F397C7 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		EB1988E927F2E2FC00F397C7 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		EB1988EB27F2E4F800F397C7 /* WeatherStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStruct.swift; sourceTree = "<group>"; };
-		EB1BEEE627F1A01E0060D7A1 /* ExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
+		EB1BEEE627F1A01E0060D7A1 /* UIViewController+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utilities.swift"; sourceTree = "<group>"; };
 		EB1BEEE827F1A6F70060D7A1 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		EB1D3F8027F06B670080E649 /* CurrencyStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyStruct.swift; sourceTree = "<group>"; };
 		EB204CE027FB035200115142 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -82,7 +81,6 @@
 		EBAB7E2B28057ED500F07D42 /* URLProtocolFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolFake.swift; sourceTree = "<group>"; };
 		EBAB7E2D2805806600F07D42 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		EBAB7E2F2805845900F07D42 /* Currency.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Currency.json; sourceTree = "<group>"; };
-		EBAB7E3428059EAC00F07D42 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		EBAB7E3B2805C5F200F07D42 /* Weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
 		EBAB7E3D2805C66900F07D42 /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
 		EBAB7E3F2805CC8500F07D42 /* Translation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translation.json; sourceTree = "<group>"; };
@@ -91,7 +89,7 @@
 		EBC2EFA127F064D200A14D92 /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
 		EBC2EFA427F0650D00A14D92 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		EBEC831827FDBB7F00755FC4 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
-		EBEC831C27FDBE8D00755FC4 /* ExtensionUrlSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUrlSession.swift; sourceTree = "<group>"; };
+		EBEC831C27FDBE8D00755FC4 /* URLSession+GenericNetworkCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+GenericNetworkCalls.swift"; sourceTree = "<group>"; };
 		EBF6751727FDD13000FD957B /* TranslationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,8 +133,8 @@
 		EB1BEEE327F19FF20060D7A1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EB1BEEE627F1A01E0060D7A1 /* ExtensionView.swift */,
-				EBEC831C27FDBE8D00755FC4 /* ExtensionUrlSession.swift */,
+				EB1BEEE627F1A01E0060D7A1 /* UIViewController+Utilities.swift */,
+				EBEC831C27FDBE8D00755FC4 /* URLSession+GenericNetworkCalls.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -251,7 +249,6 @@
 			children = (
 				EBAB7E2B28057ED500F07D42 /* URLProtocolFake.swift */,
 				EBAB7E2D2805806600F07D42 /* FakeResponseData.swift */,
-				EBAB7E3428059EAC00F07D42 /* ApiKeys.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -415,10 +412,10 @@
 				EB7EDC4527FC77D30053758F /* CityTableViewCell.swift in Sources */,
 				EBC2EFA227F064D200A14D92 /* CurrencyService.swift in Sources */,
 				EB1988EA27F2E2FC00F397C7 /* WeatherService.swift in Sources */,
-				EB1BEEE727F1A01E0060D7A1 /* ExtensionView.swift in Sources */,
+				EB1BEEE727F1A01E0060D7A1 /* UIViewController+Utilities.swift in Sources */,
 				EB1988EC27F2E4F800F397C7 /* WeatherStruct.swift in Sources */,
 				EBC2EFA527F0650E00A14D92 /* CurrencyViewController.swift in Sources */,
-				EBEC831D27FDBE8D00755FC4 /* ExtensionUrlSession.swift in Sources */,
+				EBEC831D27FDBE8D00755FC4 /* URLSession+GenericNetworkCalls.swift in Sources */,
 				EB1BEEE927F1A6F70060D7A1 /* ServiceError.swift in Sources */,
 				EB935F7127F5DCA700C7A38A /* TranslationService.swift in Sources */,
 				EB0D348B27FF16550079FF0A /* CityStruct.swift in Sources */,
@@ -439,7 +436,6 @@
 				EBAB7E422805CCCE00F07D42 /* TranslationServiceTests.swift in Sources */,
 				EBAB7E3E2805C66900F07D42 /* WeatherServiceTests.swift in Sources */,
 				EBAB7E2C28057ED500F07D42 /* URLProtocolFake.swift in Sources */,
-				EBAB7E3528059EAC00F07D42 /* ApiKeys.swift in Sources */,
 				EBAB7E2928057CF300F07D42 /* CurrencyServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,7 +600,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -634,7 +630,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

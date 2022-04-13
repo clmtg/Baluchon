@@ -12,3 +12,14 @@ Enjoy Baluchon and safe travel to you.
 ![](./mockup.jpg)
 
 ## Additional information
+* Convert amount from euros (€) to US Dollar (USD)
+
+* Retreive weather information (current condition and temperature; Min and Max temperatures for the current day) for 5 cities:
+    * Bordeaux (France)
+    * Cork (Ireland)
+    * New York (United States)
+    * Paris (France)
+    * Saint-Etienne (France)
+    
+* Translation from one langue to another one (including Bulgarian, Czech, Danish, German, Greek, English, Spanish, Estonian, Finnish, French, Hungarian, Italian, Japanese, Lithuanian, Latvian, Dutch, Polish, Portuguese, Portuguese (Brazilian), Romanian, Russian, Slovak, Slovenian, Swedish, Chinese)
+* Detect the langue input

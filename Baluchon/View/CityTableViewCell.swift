@@ -8,7 +8,7 @@
 import UIKit
 
 // The CityTableViewCell cell represent a custom cell used within the TableView for the WeatherViewController
-class CityTableViewCell: UITableViewCell {
+final class CityTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

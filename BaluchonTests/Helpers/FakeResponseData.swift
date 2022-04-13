@@ -6,6 +6,7 @@
 //
 
 import Foundation
+@testable import Baluchon
 
 final class FakeResponseData {
     

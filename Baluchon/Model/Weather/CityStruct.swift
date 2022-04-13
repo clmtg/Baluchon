@@ -8,7 +8,7 @@
 import Foundation
 
 //Struct which defines the coordinate for a city
-struct CityStruct: Decodable {
+struct CityStruct {
     let lat: String
     let lon: String
     

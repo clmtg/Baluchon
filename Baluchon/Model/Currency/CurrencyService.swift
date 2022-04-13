@@ -7,11 +7,11 @@
 
 import Foundation
 
-class CurrencyService {
+final class CurrencyService {
     
     // MARK: - Vars
     //Session and data task used to perform REST calls
-    let session: URLSession
+    private let session: URLSession
     
     //Class initializer
     init(session: URLSession = .shared) {
