@@ -21,5 +21,5 @@ Enjoy Baluchon and safe travel to you.
     * Paris (France)
     * Saint-Etienne (France)
     
-* Translation from one langue to another one (including Bulgarian, Czech, Danish, German, Greek, English, Spanish, Estonian, Finnish, French, Hungarian, Italian, Japanese, Lithuanian, Latvian, Dutch, Polish, Portuguese, Portuguese (Brazilian), Romanian, Russian, Slovak, Slovenian, Swedish, Chinese)
-* Detect the langue input
+* Translation from one langue to another one *(including Bulgarian, Czech, Danish, German, Greek, English, Spanish, Estonian, Finnish, French, Hungarian, Italian, Japanese, Lithuanian, Latvian, Dutch, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Swedish, Chinese)*
+* **Detect the langue input**
