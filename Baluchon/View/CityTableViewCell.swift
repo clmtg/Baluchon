@@ -4,7 +4,6 @@
 //
 //  Created by Clément Garcia on 05/04/2022.
 //
-
 import UIKit
 
 // The CityTableViewCell cell represent a custom cell used within the TableView for the WeatherViewController
@@ -19,9 +18,13 @@ final class CityTableViewCell: UITableViewCell {
     }
     
     // MARK: - IBOutlet
+    //Name of the affected city
     @IBOutlet weak var labelCityName: UILabel!
+    //Current condition of the affected city
     @IBOutlet weak var labelCityWeather: UILabel!
+    //Temperature information of the affected city
     @IBOutlet weak var labelCityTemp: UILabel!
+    //View including the label information for the affected city
     @IBOutlet weak var stackViewLabels: UIStackView!
     
     // MARK: - Function

@@ -4,7 +4,6 @@
 //
 //  Created by Clément Garcia on 28/03/2022.
 //
-
 import Foundation
 
 //Enumeration which list the error case for the services used within the Baluchon app

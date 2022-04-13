@@ -4,7 +4,6 @@
 //
 //  Created by Clément Garcia on 27/03/2022.
 //
-
 import UIKit
 
 final class CurrencyViewController: UIViewController {
@@ -24,7 +23,9 @@ final class CurrencyViewController: UIViewController {
     @IBOutlet weak var labelResult: UILabel!
     //Button used to request convertion by user
     @IBOutlet weak var buttonConvert: UIButton!
+    //View including the activity indicator and a label
     @IBOutlet weak var loadingStackView: UIStackView!
+    //View including the amount input from user
     @IBOutlet weak var stackViewInput: UIStackView!
     
     
@@ -37,6 +38,7 @@ final class CurrencyViewController: UIViewController {
         dismissKeyboard(firstResponder: textFieldLocalAmount)
     }
     
+    // Functions call when the user touch the display to hide keyboard
     @IBAction func tappedToHideKeyboard(_ sender: Any) {
         dismissKeyboard(firstResponder: textFieldLocalAmount)
     }

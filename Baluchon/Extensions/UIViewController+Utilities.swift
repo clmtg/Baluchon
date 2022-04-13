@@ -4,12 +4,10 @@
 //
 //  Created by Clément Garcia on 28/03/2022.
 //
-
 import UIKit
 
-
 extension UIViewController {
-    /// Display an iOS alrt to the user
+    /// Display an iOS alert to the user
     /// - Parameters:
     ///   - title: Alert's title
     ///   - message: Alert's message
@@ -31,7 +29,10 @@ extension UIViewController {
         firstResponder.resignFirstResponder()
     }
     
-    
+    /// Enable "loading view" for the user
+    /// - Parameters:
+    ///   - hide: view to hide (e.g. view including user input)
+    ///   - display: view to display (e.g. view with activity indicator)
     func toggleActivityIndicator(hide: UIView, display: UIView) {
         hide.isHidden = true
         display.isHidden = false

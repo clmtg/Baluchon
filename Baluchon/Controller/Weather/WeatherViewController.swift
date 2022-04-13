@@ -4,7 +4,6 @@
 //
 //  Created by Clément Garcia on 29/03/2022.
 //
-
 import UIKit
 
 final class WeatherViewController: UIViewController {
@@ -17,8 +16,11 @@ final class WeatherViewController: UIViewController {
     // MARK: - Var
     //Instance of the Weather data provider model
     private let weather = WeatherService()
+    //Array of weatherStruct used by the UITableView
     private var cityListCurrentWeather = [weatherStruct]()
+    //Array of weatherStruct sorted used by the UITableView
     private var cityListCurrentWeatherSorted = [weatherStruct]()
+    //Default city list to display when the App is launched or the list reloaded
     private var defaultCityList = [CityStruct(lat: "40.714272", lon: "-74.005966"), //NewYork
                                    CityStruct(lat: "51.966671", lon: "-8.58333"), //Cork
                                    CityStruct(lat: "48.853401", lon: "2.3486"), //Paris
@@ -27,7 +29,9 @@ final class WeatherViewController: UIViewController {
     ]
     
     // MARK: - IBOutlets
+    //Table view to diplay weather condition and temps for each city
     @IBOutlet weak var cityListTableView: UITableView!
+    //View including the activity indicator and a label
     @IBOutlet weak var loadingStackView: UIStackView!
     
     // MARK: - IBAction
@@ -39,6 +43,10 @@ final class WeatherViewController: UIViewController {
     
     // MARK: - Functions
     /// Retreive the weather datas using the model instance.
+    /// - Parameters:
+    ///   - lat: affected city latitude
+    ///   - lon: affected city longitude
+    ///   - group: Group dispatch to leave when the async steps have been performed
     func loadWeatherDatas(lat: String, lon: String, group: DispatchGroup?){
         weather.retreiveWeatherFor(lat: lat, lon: lon) { [weak self] result in
             DispatchQueue.main.async {
@@ -75,7 +83,6 @@ final class WeatherViewController: UIViewController {
 // MARK: - Extensions - Related to Table View
 //To conform at UITableViewDataSource protocol. (this is required to diplay current city list weather within a table view)
 extension WeatherViewController: UITableViewDataSource{
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cityListCurrentWeatherSorted.count
     }
@@ -91,9 +98,8 @@ extension WeatherViewController: UITableViewDataSource{
     }
 }
 
-//To conform at UITableViewDDelegate protocol. (this is required to edit current city list weather within a table view)
+//To conform at UITableViewDelegate protocol. (this is required to edit current city list weather within a table view)
 extension WeatherViewController: UITableViewDelegate{
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             cityListCurrentWeatherSorted.remove(at: indexPath.row)
@@ -104,7 +110,6 @@ extension WeatherViewController: UITableViewDelegate{
 
 // MARK: - Extensions - Related to Dispatch Group
 extension WeatherViewController{
-    
     func collectWeatherDefaultCities() {
         toggleActivityIndicator(hide: cityListTableView, display: loadingStackView)
         let group = DispatchGroup()
@@ -116,7 +121,5 @@ extension WeatherViewController{
             self.cityListTableView.reloadData()
             self.toggleActivityIndicator(hide: self.loadingStackView, display: self.cityListTableView)
         }
-    
     }
-    
 }

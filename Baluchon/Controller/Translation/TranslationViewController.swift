@@ -4,7 +4,6 @@
 //
 //  Created by Clément Garcia on 31/03/2022.
 //
-
 import UIKit
 
 final class TranslationViewController: UIViewController {
@@ -89,7 +88,6 @@ extension TranslationViewController: UIPickerViewDelegate{
     }
 }
 
-
 // MARK: - Extensions - Keyboard
 //Extensions related to the iOS keyboard
 extension TranslationViewController: UITextViewDelegate {
@@ -98,5 +96,4 @@ extension TranslationViewController: UITextViewDelegate {
         processTranslation()
         return true
     }
-    
 }

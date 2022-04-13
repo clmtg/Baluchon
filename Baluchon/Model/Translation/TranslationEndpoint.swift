@@ -32,11 +32,9 @@ struct TranslationEndpoint {
         }
         return url
     }
-    
 }
 
 // MARK: - Functions
-
 extension TranslationEndpoint {
     
     /// Return the endpoint to reach in order to retreive the translation requested

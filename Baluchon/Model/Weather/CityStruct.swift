@@ -11,5 +11,4 @@ import Foundation
 struct CityStruct {
     let lat: String
     let lon: String
-    
 }

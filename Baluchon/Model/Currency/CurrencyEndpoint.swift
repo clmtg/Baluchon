@@ -32,7 +32,6 @@ struct CurrencyEndpoint {
         }
         return url
     }
-    
 }
 
     // MARK: - Functions

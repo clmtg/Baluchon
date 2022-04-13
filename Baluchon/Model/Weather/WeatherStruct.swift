@@ -14,11 +14,6 @@ struct weatherStruct: Decodable {
     let weather: [Weather]
     let base: String
     let main: [String: Float]
-    let visibility: Int
-    let wind: [String: Float]
-    let clouds: [String: Int]
-    let dt: Double
-    let sys: Sys
     let timezone: Int
     let id: Int
     let name: String
@@ -31,12 +26,4 @@ struct Weather: Decodable {
     let main: String
     let description: String
     let icon: String
-}
-
-struct Sys: Decodable {
-    let type: Int
-    let id: Int
-    let country: String
-    let sunrise: Double
-    let sunset: Double
 }

@@ -32,7 +32,6 @@ struct WeatherEndpoint {
         }
         return url
     }
-    
 }
 
     // MARK: - Functions
