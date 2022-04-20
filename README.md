@@ -1,5 +1,5 @@
 # Baluchon project
-## The travel assistante you've always dreamt of 
+## Baluchon :  The travel assistant you’ve always dreamed of
 Imagine yourself in a foreign country. You just arrived and never been so thrill to explore the place. Discover the culture, the food and meet people.
 However, straight away, many questions comes to you. How much does this thing cost ? How can I say this or that ? What is the weather forecast for the next 10 days ? Will I need to get a rain coat ? (If you are in Ireland) (Oddly specific)
 
